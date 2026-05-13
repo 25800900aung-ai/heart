@@ -116,6 +116,11 @@
                 // ပြင်လိုက်တဲ့အပိုင်း: backticks () ကို သုံးထားပါတယ်
                 fillPath.style.clipPath = `inset(${100 - progress}% 0 0 0)`;
             } else {
+                confetti({
+  particleCount: 150, // ပန်းပွင့် အရေအတွက် (ပိုများချင်ရင် ဂဏန်းတိုးပါ)
+  spread: 70,         // ဘယ်လောက်အထိ ပြန့်သွားမလဲ
+  origin: { y: 0.6 }  // ဘယ်နေရာကနေ စထွက်မလဲ
+});
                 clearInterval(interval);
                 message.classList.remove('hidden');
                 holdBtn.style.display = 'none';
@@ -135,6 +140,6 @@
     holdBtn.addEventListener('touchstart', startLoading);
     holdBtn.addEventListener('touchend', stopLoading);
 </script>
-
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </body>
 </html>
